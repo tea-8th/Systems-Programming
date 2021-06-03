@@ -1,0 +1,8 @@
+CC=gcc
+CFLAGS= -I.
+OBJ=pipe2.o
+LIBS= libmyfunc.a
+%o:%c$(DEPS)
+	$(CC) -save-temps -c -o $@ $< $(CFLAGS)
+projectmake2:$(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
